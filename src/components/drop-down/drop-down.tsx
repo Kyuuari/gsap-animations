@@ -10,7 +10,7 @@ export default function DropDown({}: Props) {
     let ctx = gsap.context(() => {
       // use scoped selectors
       gsap.to(ref.current, { y: 100 });
-    }, ref);
+    });
 
     //clean up animations
     return () => ctx.revert();
