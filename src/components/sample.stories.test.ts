@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { within, userEvent } from '@storybook/testing-library';
-
 import { Page } from '../components/examples/page/Page';
 
+
+//SAMPLE BOILER PLATE TO COPY PASETE
 const meta = {
   title: 'Example/Page',
   component: Page,
