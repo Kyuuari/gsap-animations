@@ -9,7 +9,7 @@ const meta = {
   component: ScrollMarquee,
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-    layout: 'centered',
+    layout: 'fullscreen',
   },
 } satisfies Meta<typeof ScrollMarquee>;
 

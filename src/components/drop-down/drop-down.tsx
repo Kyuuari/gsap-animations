@@ -4,12 +4,16 @@ import gsap from "gsap";
 type Props = {};
 
 export default function DropDown({}: Props) {
-  const ref = useRef<any>();
+  const ref = useRef<HTMLDivElement>(null!);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       // use scoped selectors
-      gsap.to(ref.current, { y: 100 });
+      gsap.fromTo(
+        ref.current.childNodes,
+        { yPercent: -100 },
+        { yPercent: 0, stagger: 0.5 }
+      );
     });
 
     //clean up animations
@@ -17,8 +21,10 @@ export default function DropDown({}: Props) {
   }, []);
 
   return (
-    <div ref={ref} className="h-screen bg-green-500">
-      DropDown
+    <div ref={ref} className="bg-blue-500 h-screen flex flex-row">
+      <div className="flex-1 bg-green-500"></div>
+      <div className="flex-1 bg-yellow-500"></div>
+      <div className="flex-1 bg-red-500"></div>
     </div>
   );
 }
